@@ -17,7 +17,7 @@ This library is a port of the [JTar library](https://code.google.com/p/jtar/) wh
 
 ## Installation 
 
-1. Download the [CN1Tar.cn1lib](dist/CN1Tar.cn1lib) file and copy it into your Codename One Application's "lib" directory.
+1. Download the [CN1JTar.cn1lib](dist/CN1JTar.cn1lib) file and copy it into your Codename One Application's "lib" directory.
 2. Right click on your application's icon in the Netbeans project explorer, and select "Refresh Libs"
 
 ## Usage Examples
