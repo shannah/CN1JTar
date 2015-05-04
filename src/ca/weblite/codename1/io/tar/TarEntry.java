@@ -138,7 +138,7 @@ public class TarEntry {
      */
     public boolean isDirectory() {
         if (this.file != null)
-            return FileSystemStorage.getInstance().isDirectory(this.file);
+            return FileSystemStorage.getInstance().isDirectory(FileSystemStorage.getInstance().getAppHomePath() + "/" + this.file);
 
         if (this.header != null) {
             if (this.header.linkFlag == TarHeader.LF_DIR)
@@ -170,7 +170,7 @@ public class TarEntry {
 
         header.name = new StringBuilder( name );
 
-        if (fileSystem.isDirectory(file)) {
+        if (fileSystem.isDirectory(FileSystemStorage.getInstance().getAppHomePath() + "/" + file)) {
             header.mode = 040755;
             header.linkFlag = TarHeader.LF_DIR;
             if (header.name.charAt( header.name.length() - 1 ) != '/') {
@@ -178,7 +178,7 @@ public class TarEntry {
             }
             header.size = 0;
         } else {
-            header.size = fileSystem.getLength(file);
+            header.size = fileSystem.getLength(FileSystemStorage.getInstance().getAppHomePath() + "/" + file);
             header.mode = 0100644;
             header.linkFlag = TarHeader.LF_NORMAL;
         }
